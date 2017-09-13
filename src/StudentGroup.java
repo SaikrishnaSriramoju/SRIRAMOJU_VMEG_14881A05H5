@@ -375,6 +375,7 @@ this.students=al.toArray(new Student[al.size()]);
 
 //	@Override
 	public Student[] getByBirthDate(Date date) {
+		if(date==null){throw new IllegalArgumentException("NULL");}
 		// Add your implementation here
 		return null;
 	}
@@ -382,12 +383,14 @@ this.students=al.toArray(new Student[al.size()]);
 	@Override
 	public Student[] getBetweenBirthDates(Date firstDate, Date lastDate) {
 		// Add your implementation here
+if(firstDate==null || lastDate==null){throw new IllegalArgumentException("NULL");}
 		return null;
 	}
 
 	@Override
 	public Student[] getNearBirthDate(Date date, int days) {
 		// Add your implementation here
+		if(date==null){throw new IllegalArgumentException("NULL");}
 		return null;
 	}
 
@@ -415,6 +418,7 @@ this.students=al.toArray(new Student[al.size()]);
 	public Student getNextStudent(Student student) {
 		if(student==null){throw new IllegalArgumentException("NULL");}
 		// Add your implementation here
+
 		return null;
 	}
 }
