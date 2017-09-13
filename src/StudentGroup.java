@@ -34,29 +34,23 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public void setStudents(Student[] students) {
-  try{ if(students==null){throw new IllegalArgumentException();}
+  if(students==null){throw new IllegalArgumentException();}
   this.students=students;}
-   catch(Exception e)
-		{
-	   System.out.println(e);
-		}
+   
 		// Add your implementation here
-	}
+	
 
 	@Override
 	public Student getStudent(int index) {
-		try{
+		
 
 		if(index<0||index>=this.students.length)
 		{
 			throw new IllegalArgumentException();
 		}
 		
-		}//try
-		 catch(Exception e)
-		{
-	   System.out.println(e);
-		}
+		
+		 
 		// Add 
 
 		// Add your implementation here
@@ -66,16 +60,12 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void setStudent(Student student, int index) {
 
-	try{	if(student==null||index<0||index>=this.students.length)
+		if(student==null||index<0||index>=this.students.length)
 			{
 			throw new IllegalArgumentException();
 			}
 			this.students[index]=student;
-		}//try
-		 catch(Exception e)
-		{
-	   System.out.println(e);
-		}
+	
 
 		// Add 
 		
@@ -86,7 +76,7 @@ public class StudentGroup implements StudentArrayOperation {
 	public void addFirst(Student student) {
 		// Add your implementation here
 
-		try{	
+			
 				if(student==null)
 				{
 				throw new IllegalArgumentException();
@@ -105,18 +95,13 @@ this.students=al.toArray(new Student[al.size()]);
 
 
 			
-		  }//try
-		   catch(Exception e)
-		{
-	   System.out.println(e);
-		}
-
+		
+		 
 	}
 
 	@Override
 	public void addLast(Student student) {
 
-	try{	
 				if(student==null)
 				{
 				throw new IllegalArgumentException();
@@ -134,19 +119,14 @@ this.students=al.toArray(new Student[al.size()]);
 				al.add(student);
 this.students=al.toArray(new Student[al.size()]);
 			
-		  }//try
-		   catch(Exception e)
-		{
-	   System.out.println(e);
-		}
+		  
 
 		// Add your implementation here
 	}
 
 	@Override
 	public void add(Student student, int index) {
-		try{
-
+		
 		if(index<0||index>=this.students.length||student==null)
 		{
 			throw new IllegalArgumentException();
@@ -176,11 +156,6 @@ this.students=al.toArray(new Student[al.size()]);
 
 
 		
-		}//try
-		 catch(Exception e)
-		{
-	   System.out.println(e);
-		}
 
 
 
@@ -192,7 +167,7 @@ this.students=al.toArray(new Student[al.size()]);
 	public void remove(int index) {
 
 
-		try{
+		
 
 		if(index<0||index>=this.students.length)
 		{
@@ -224,12 +199,6 @@ this.students=al.toArray(new Student[al.size()]);
 
 
 		
-		}//try
-		 catch(Exception e)
-		{
-	   System.out.println(e);
-		}
-
 
 
 
@@ -240,7 +209,7 @@ this.students=al.toArray(new Student[al.size()]);
 	public void remove(Student student) {
 
 
-		try{
+	
 
 		if(student==null)
 		{
@@ -275,11 +244,7 @@ this.students=al.toArray(new Student[al.size()]);
 
 
 		
-		}//try
-		 catch(Exception e)
-		{
-	   System.out.println(e);
-		}
+		
 
 
 
@@ -291,7 +256,7 @@ this.students=al.toArray(new Student[al.size()]);
 
 	@Override
 	public void removeFromIndex(int index) {
-			try{
+			
 
 		if(index<0||index>=this.students.length)
 		{
@@ -332,14 +297,7 @@ this.students=al.toArray(new Student[al.size()]);
 
 
 		
-		}//try
-		 catch(Exception e)
-		{
-	   System.out.println(e);
-		}
-
-
-
+		
 
 
 
@@ -349,8 +307,7 @@ this.students=al.toArray(new Student[al.size()]);
 
 	@Override
 	public void removeFromElement(Student student) {
-	try{
-
+	
 			if(student==null)
 		{
 			throw new IllegalArgumentException();
@@ -381,17 +338,13 @@ this.students=al.toArray(new Student[al.size()]);
 					}//for
 this.students=al.toArray(new Student[al.size()]);
 	}
-catch(Exception e)
-		{
-	   System.out.println(e);
-		}
 
 
 
 
 
 		// Add your implementation here
-	}
+	
 
 	@Override
 	public void removeToIndex(int index) {
@@ -402,13 +355,12 @@ catch(Exception e)
 	public void removeToElement(Student student) {
 		// Add your implementation here
 	}
-
-//	@Override
+	@Override
 	public void bubbleSort() {
 		Student temp;
-		for(int i=0;i<=students.length;i++)
+		for(int i=0;i<students.length;i++)
 		{
-			for(int j=0;j<students.length-1;j++)
+			for(int j=0;j<students.length-i-1;j++)
 			{
 				if(students[j].getId() > students[j+1].getId())
 				{
