@@ -394,12 +394,14 @@ this.students=al.toArray(new Student[al.size()]);
 	@Override
 	public int getCurrentAgeByDate(int indexOfStudent) {
 		// Add your implementation here
+		if(indexOfStudent==0){throw new IllegalArgumentException("NULL");}
 		return 0;
 	}
 
 	@Override
 	public Student[] getStudentsByAge(int age) {
 		// Add your implementation here
+		if(age==0){throw new IllegalArgumentException("NULL");}
 		return null;
 	}
 
@@ -411,6 +413,7 @@ this.students=al.toArray(new Student[al.size()]);
 
 	@Override
 	public Student getNextStudent(Student student) {
+		if(student==null){throw new IllegalArgumentException("NULL");}
 		// Add your implementation here
 		return null;
 	}
