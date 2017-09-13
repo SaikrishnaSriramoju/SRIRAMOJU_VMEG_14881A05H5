@@ -401,16 +401,16 @@ catch(Exception e)
 		{
 			for(int j=0;j<students.length-1;j++)
 			{
-				if(getStudent[j] > getStudent[j+1])
+				if(students[j].getId() > students[j+1].getId())
 				{
-					temp=getStudent(j);
-					getStudent(j)=getStudent(j+1);
-					getStudent(j+1)=temp;
+					temp=students[j];
+					students[j]=students[j+1];
+					students[j+1]=temp;
 				}
 			}
 		}
 		// Add your implementation here
-	*/}
+	}
 
 //	@Override
 	public Student[] getByBirthDate(Date date) {
