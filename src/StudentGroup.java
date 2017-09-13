@@ -1,5 +1,5 @@
 import java.util.Date;
-import java.util.Arrays;
+import java.util.*;
 
 /**
  * A fix-sized array of students
@@ -97,6 +97,8 @@ public class StudentGroup implements StudentArrayOperation {
 						r[i]=students[i-1];
 					}
 				students=Arrays.copyOf(r, r.length);
+
+
 			
 		  }//try
 		   catch(Exception e)
@@ -140,7 +142,7 @@ public class StudentGroup implements StudentArrayOperation {
 			throw new IllegalArgumentException();
 		}
 
-	Student[] r=new Student[students.length+1];
+/*	Student[] r=new Student[students.length+1];
 	for(int i=0;i<r.length-1;i++)
 					{
 						if(i!=index)
@@ -149,7 +151,17 @@ public class StudentGroup implements StudentArrayOperation {
 						}
 						else{r[i]=student;}
 					}//for
-				students=Arrays.copyOf(r, r.length);
+				students=Arrays.copyOf(r, r.length);*/
+				ArrayList<Student> al=new ArrayList<Student>();
+for(int i=0;i<this.students.length-1;i++)
+					{
+						if(i!=index)
+						{
+							al.add(getStudent(i));
+						}
+						else{al.add(student);}
+					}//for
+this.students=al.toArray(new Student[al.size()]);
 
 
 
@@ -177,7 +189,7 @@ public class StudentGroup implements StudentArrayOperation {
 			throw new IllegalArgumentException();
 		}
 
-	Student[] r=new Student[students.length-1];
+	/*Student[] r=new Student[students.length-1];
 	for(int i=0;i<r.length-1;i++)
 					{
 						if(i!=index)
@@ -186,7 +198,18 @@ public class StudentGroup implements StudentArrayOperation {
 						}
 						else{i--;}
 					}//for
-				students=Arrays.copyOf(r, r.length);
+				students=Arrays.copyOf(r, r.length);*/
+					ArrayList<Student> al=new ArrayList<Student>();
+				for(int i=0;i<this.students.length-1;i++)
+					{
+						if(i!=index)
+						{
+							al.add(getStudent(i));
+						}
+						
+					}//for
+this.students=al.toArray(new Student[al.size()]);
+
 
 
 
@@ -214,16 +237,30 @@ public class StudentGroup implements StudentArrayOperation {
 			throw new IllegalArgumentException();
 		}
 
-	Student[] r=new Student[students.length-1];
+	/*Student[] r=new Student[students.length-1];
 	for(int i=0;i<r.length-1;i++)
 					{
 						if(students[i]!=student)
 						{
-							r[i]=students[i];
+							al.add(students[i]);
 						}
-						else{i--;}
+						
 					}//for
-				students=Arrays.copyOf(r, r.length);
+				students=Arrays.copyOf(r, r.length);*/
+					
+						ArrayList<Student> al=new ArrayList<Student>();
+				for(int i=0;i<this.students.length-1;i++)
+					{
+						if(students[i]!=student)
+						{
+							al.add(getStudent(i));
+						}
+						
+					}//for
+this.students=al.toArray(new Student[al.size()]);
+
+
+
 
 
 
@@ -252,7 +289,7 @@ public class StudentGroup implements StudentArrayOperation {
 		}
 if(index==0)
 				{
-				Student[] r=new Student[1];
+				/*Student[] r=new Student[1];
 				r[0]=students[0];
 				students=Arrays.copyOf(r, r.length);
 				} 
@@ -265,7 +302,21 @@ if(index==0)
 						
 							r[i]=students[i];
 					}
-				students=Arrays.copyOf(r, r.length);
+				students=Arrays.copyOf(r, r.length);*/
+					ArrayList<Student> al=new ArrayList<Student>();
+				for(int i=0;i<this.students.length-1;i++)
+					{
+						if(i!=index)
+						{
+							al.add(getStudent(i));
+							
+						}else{al.add(getStudent(i));
+						break;}
+						
+					}//for
+this.students=al.toArray(new Student[al.size()]);
+
+
 
 	}
 
@@ -294,7 +345,7 @@ if(index==0)
 		{
 			throw new IllegalArgumentException();
 		}
-		int index=0;
+	/*	int index=0;
 
 	
 		for(int i=0;i<students.length;i++)
@@ -305,6 +356,20 @@ if(index==0)
 			}
 		}
 		removeFromIndex(index);
+	}*/
+
+	ArrayList<Student> al=new ArrayList<Student>();
+				for(int i=0;i<this.students.length-1;i++)
+					{
+						if(students[i]!=student)
+						{
+							al.add(getStudent(i));
+						}
+						else{al.add(getStudent(i));
+						break;}
+						
+					}//for
+this.students=al.toArray(new Student[al.size()]);
 	}
 catch(Exception e)
 		{
@@ -330,8 +395,21 @@ catch(Exception e)
 
 //	@Override
 	public void bubbleSort() {
+		/*Student[] temp=new Student[1];
+		for(int i=0;i<=students.length;i++)
+		{
+			for(int j=0;j<students.length-1;j++)
+			{
+				if(getStudent[j] > getStudent[j+1])
+				{
+					temp[0]=getStudent[j];
+					students[j]=getStudent[j+1];
+					students[j+1]=temp[0];
+				}
+			}
+		}
 		// Add your implementation here
-	}
+	*/}
 
 //	@Override
 	public Student[] getByBirthDate(Date date) {
