@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.util.Arrays;
 
 /**
  * A fix-sized array of students
@@ -287,6 +288,33 @@ if(index==0)
 
 	@Override
 	public void removeFromElement(Student student) {
+	try{
+
+			if(student==null)
+		{
+			throw new IllegalArgumentException();
+		}
+		int index=0;
+
+	
+		for(int i=0;i<students.length;i++)
+		{
+			if(this.students[i]==student)
+			{index=i;
+			break;
+			}
+		}
+		removeFromIndex(index);
+	}
+catch(Exception e)
+		{
+	   System.out.println(e);
+		}
+
+
+
+
+
 		// Add your implementation here
 	}
 
@@ -300,12 +328,12 @@ if(index==0)
 		// Add your implementation here
 	}
 
-	@Override
+//	@Override
 	public void bubbleSort() {
 		// Add your implementation here
 	}
 
-	@Override
+//	@Override
 	public Student[] getByBirthDate(Date date) {
 		// Add your implementation here
 		return null;
