@@ -34,7 +34,8 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public void setStudents(Student[] students) {
-  try{ if(students==null){throw new IllegalArgumentException();}}
+  try{ if(students==null){throw new IllegalArgumentException();}
+  this.students=students;}
    catch(Exception e)
 		{
 	   System.out.println(e);
@@ -118,7 +119,7 @@ public class StudentGroup implements StudentArrayOperation {
 				}
 				Student[] r=new Student[students.length+1];
 				r[r.length-1]=student;
-				for(int i=0;i<r.length-1;i++)
+				for(int i=0;i<this.students.length;i++)
 					{
 						r[i]=students[i];
 					}
@@ -153,7 +154,7 @@ public class StudentGroup implements StudentArrayOperation {
 					}//for
 				students=Arrays.copyOf(r, r.length);*/
 				ArrayList<Student> al=new ArrayList<Student>();
-for(int i=0;i<this.students.length-1;i++)
+for(int i=0;i<this.students.length;i++)
 					{
 						if(i!=index)
 						{
@@ -200,7 +201,7 @@ this.students=al.toArray(new Student[al.size()]);
 					}//for
 				students=Arrays.copyOf(r, r.length);*/
 					ArrayList<Student> al=new ArrayList<Student>();
-				for(int i=0;i<this.students.length-1;i++)
+				for(int i=0;i<this.students.length;i++)
 					{
 						if(i!=index)
 						{
@@ -249,7 +250,7 @@ this.students=al.toArray(new Student[al.size()]);
 				students=Arrays.copyOf(r, r.length);*/
 					
 						ArrayList<Student> al=new ArrayList<Student>();
-				for(int i=0;i<this.students.length-1;i++)
+				for(int i=0;i<this.students.length;i++)
 					{
 						if(students[i]!=student)
 						{
@@ -304,7 +305,7 @@ if(index==0)
 					}
 				students=Arrays.copyOf(r, r.length);*/
 					ArrayList<Student> al=new ArrayList<Student>();
-				for(int i=0;i<this.students.length-1;i++)
+				for(int i=0;i<this.students.length;i++)
 					{
 						if(i!=index)
 						{
@@ -359,7 +360,7 @@ this.students=al.toArray(new Student[al.size()]);
 	}*/
 
 	ArrayList<Student> al=new ArrayList<Student>();
-				for(int i=0;i<this.students.length-1;i++)
+				for(int i=0;i<this.students.length;i++)
 					{
 						if(students[i]!=student)
 						{
@@ -395,16 +396,16 @@ catch(Exception e)
 
 //	@Override
 	public void bubbleSort() {
-		/*Student[] temp=new Student[1];
+		Student temp;
 		for(int i=0;i<=students.length;i++)
 		{
 			for(int j=0;j<students.length-1;j++)
 			{
 				if(getStudent[j] > getStudent[j+1])
 				{
-					temp[0]=getStudent[j];
-					students[j]=getStudent[j+1];
-					students[j+1]=temp[0];
+					temp=getStudent(j);
+					getStudent(j)=getStudent(j+1);
+					getStudent(j+1)=temp;
 				}
 			}
 		}
