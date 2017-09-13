@@ -91,13 +91,17 @@ public class StudentGroup implements StudentArrayOperation {
 				{
 				throw new IllegalArgumentException();
 				}
-				Student[] r=new Student[students.length+1];
+				/*Student[] r=new Student[students.length+1];
 				r[0]=student;
 				for(int i=1;i<=r.length-1;i++)
 					{
 						r[i]=students[i-1];
 					}
-				students=Arrays.copyOf(r, r.length);
+				students=Arrays.copyOf(r, r.length);*/
+				ArrayList<Student> al=new ArrayList<Student>();
+				al.add(student);
+				for(int i=0;i<=students.length-1;i++){al.add(getStudent(i));}
+this.students=al.toArray(new Student[al.size()]);
 
 
 			
@@ -117,13 +121,18 @@ public class StudentGroup implements StudentArrayOperation {
 				{
 				throw new IllegalArgumentException();
 				}
-				Student[] r=new Student[students.length+1];
+				/*Student[] r=new Student[students.length+1];
 				r[r.length-1]=student;
 				for(int i=0;i<this.students.length;i++)
 					{
 						r[i]=students[i];
 					}
-				students=Arrays.copyOf(r, r.length);
+				students=Arrays.copyOf(r, r.length);*/
+				ArrayList<Student> al=new ArrayList<Student>();
+				
+				for(int i=0;i<=students.length-1;i++){al.add(getStudent(i));}
+				al.add(student);
+this.students=al.toArray(new Student[al.size()]);
 			
 		  }//try
 		   catch(Exception e)
