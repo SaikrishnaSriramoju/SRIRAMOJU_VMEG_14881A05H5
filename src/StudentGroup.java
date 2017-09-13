@@ -417,7 +417,14 @@ if(firstDate==null || lastDate==null){throw new IllegalArgumentException("NULL")
 	@Override
 	public Student getNextStudent(Student student) {
 		if(student==null){throw new IllegalArgumentException("NULL");}
-		// Add your implementation here
+
+		for(int i=0;i<students.length;i++)
+		{
+
+	if(students[i]==student){return students[i+1];}
+			
+
+		}// Add your implementation here
 
 		return null;
 	}
